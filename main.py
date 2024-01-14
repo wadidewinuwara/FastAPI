@@ -2,6 +2,15 @@ from fastapi import FastAPI, UploadFile
 from pathlib import Path
 app = FastAPI()
 
+origins = ["*"]
+app.add_middleware(
+ CORSMiddleware,
+ allow_origins=origins,
+ allow_credentials=True,
+ allow_methods=["*"],
+ allow_headers=["*"],
+)
+
 DATA = Path() / 'DATA'
 
 
