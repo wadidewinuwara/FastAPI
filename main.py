@@ -14,6 +14,9 @@ app.add_middleware(
 
 DATA = Path() / 'DATA'
 
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
 
 @app.post("/uploadfile/")
 async def create_upload_file(file_upload: UploadFile):
